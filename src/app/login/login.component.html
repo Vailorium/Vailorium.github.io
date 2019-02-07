@@ -1,0 +1,17 @@
+<div id="login-left-panel">
+  <h1>Login</h1>
+<form>
+  <mat-form-field>
+  <input matInput placeholder="username">
+  </mat-form-field><br />
+  <mat-form-field>
+  <input matInput placeholder="password" [type]="hide ? 'password' : 'text'">
+  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </mat-form-field><br />
+  
+  <button matButton mat-raised-button routerLink="/dashboard">Login</button>
+  </form>
+</div>
+<div id="login-right-panel">
+
+</div>

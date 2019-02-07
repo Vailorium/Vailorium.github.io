@@ -1,0 +1,47 @@
+<mat-card class="short">
+  <mat-card-title>Hello!</mat-card-title>
+  <mat-card-subtitle>No!</mat-card-subtitle>
+  <mat-card-content>AAA!</mat-card-content>
+  <mat-list>
+      <mat-list-item>Item 1</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Item 2</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Item 3</mat-list-item>
+    </mat-list>
+  <mat-card-actions>
+      <button matButton mat-raised-button routerLink="/login" color="primary">Login</button>
+  </mat-card-actions>
+  <mat-card-footer>Footer</mat-card-footer>
+</mat-card>
+<mat-card class="short">
+  <mat-card-title>Data Table!</mat-card-title>
+  <table cdk-table [dataSource]="dataSource">
+    <!-- Position Column -->
+    <ng-container cdkColumnDef="position">
+      <th cdk-header-cell *cdkHeaderCellDef> No. </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container cdkColumnDef="name">
+      <th cdk-header-cell *cdkHeaderCellDef> Name </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container cdkColumnDef="weight">
+      <th cdk-header-cell *cdkHeaderCellDef> Weight </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.weight}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container cdkColumnDef="symbol">
+      <th cdk-header-cell *cdkHeaderCellDef> Symbol </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>
+  
+    <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
